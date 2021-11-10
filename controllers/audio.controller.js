@@ -16,7 +16,7 @@ db.on('open', () => {
 const renderAudio = async (req, res, next) => {
    let filesList = new Array()
    let rawResponse = await gfs.files.find()
-   rawResponse.toArray((err, files) => {
+   await rawResponse.toArray((err, files) => {
       //check if the file exists
       if (!files || files.length === 0) {
          res.status(404).json({

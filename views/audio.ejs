@@ -18,13 +18,13 @@
    <% if (file.filename) { %>
       <h2><%= file?.metadata?.originalName ?? "Noname" %> </h2>
       <audio controls>
-         <source src="audio/<%= file.filename %> "  type="audio/mpeg">
+         <source src="files/audio/<%= file.filename %> "  type="audio/mpeg">
          Your browser does not support the audio element.
       </audio>
    <% } %>
    <% filesList.forEach(fileSingle => { %>
       <div>
-         <br/><a href="http://localhost:3000/files/audio/<%= fileSingle.filename %>"><%= fileSingle?.metadata?.originalName ?? "Noname" %> </a>
+         <br/><a href="http://localhost:3000/audio?filename=<%= fileSingle.filename %>"><%= fileSingle?.metadata?.originalName ?? "Noname" %> </a>
          <br/>
          <form action="http://localhost:3000/files/audio/<%= fileSingle._id %>?_method=DELETE" method="post">
             <button type="submit" class="btn btn-danger btn-block my-4">Delete</button>

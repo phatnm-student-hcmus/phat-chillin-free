@@ -8,10 +8,6 @@ router.get('/', (req, res, next) => {
 })
 
 router.post('/', upload.single('file'), (req, res, next) => {
-   // res.json({
-   //    success: true,
-   //    file: req.file
-   // })
    res.redirect('/upload')
 })
 
